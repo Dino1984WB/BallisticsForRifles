@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import matplotlib.pyplot as mpl
 import rifleData as rd
 import pandas as pd
