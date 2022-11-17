@@ -9,11 +9,13 @@ from tabulate import tabulate
 def graph():
     #graph with matplotlib
 
+    #new dataframe from getData() in rifleData.py
     dfMainR = rd.getData() #grab dataframe of ballistics data from rifleData.py
-    fig = mpl.figure()
-    ax = mpl.axes()
+    fig = mpl.figure() #figure..?
+    ax = mpl.axes() #axis declaration
 
-    x = np.linspace(6000, 30, 78)
+
+    x = np.array([0, 750])
     ax.plot(x, dfMainR)
 
     mpl.show() #sets graph visible
