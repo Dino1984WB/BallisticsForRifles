@@ -32,27 +32,23 @@ def getData():
     #print(dfcR.to_string())
     #print(dfcH.to_string())
 
-    #Delimiter thingy that devides the nonsorted and sorted dataframes
-    print("\n\n\n\n")
-    print("Below is the data sorted by bullet weight:")
-    print("\n\n\n\n\n")
-
     #dfc is a dataframe that can contain mass in grains of projectiles
     printThisR = dfcR.sort_values(dfcR.columns[0]) #sorts the Rifle records numerically
     printThisH = dfcH.sort_values(dfcH.columns[0]) #sorts the Handgun records numerically
     
     #prints the dataframes to the console
-    print(printThisR.to_string())
-    print("^Rifle data, above | below, Handgun data")
-    print(printThisH.to_string())
+    #print(printThisR.to_string())
+    #rint(" ")
+    #print(printThisH.to_string())
 
     #send dataframe into a csv file
     #dfcR.to_csv('CleanedBallisticRifleData.csv')
     #dfcH.to_csv('CleanedBallisticHandgunData.csv')
 
     #waits for user input to hold open window
-    pauseForever = input("Press any key to Continue")
+    #pauseForever = input("Press any key to Continue")
 
+    return printThisR # add printThisH via comma later on
 
 
 getData()
