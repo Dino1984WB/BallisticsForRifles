@@ -3,53 +3,66 @@
 import csv
 import pandas as pd
 
-def main():
-    #Data derivation done here ->
+def getData():
 
     #begin pandas stuff
     #grab files, produce a dataframe rom the csv files
 
-
+    #imports all, only rifles, and then only hangun's ballistics
     #import Ballistics.csv
-    input_file_ballistics = "C:\\DataAnalytics\\Ballistics.csv"
-    datasetAll = pd.read_csv(input_file_ballistics)
-    df = pd.DataFrame(dataset)
-
+    
+    #input_file_ballistics = "C:\\DataAnalytics\\Ballistics.csv"
+    #datasetAll = pd.read_csv(input_file_ballistics)
+    #dfA = pd.DataFrame(datasetAll)
+    
     #import rifleCarts.csv
-    input_file_rifle = "C:\\DataAnalytics\\rifleCarts.csv"
+    input_file_rifle = "C:\\DataAnalytics\\rifleCartscsv.csv"
     datasetRifle = pd.read_csv(input_file_rifle)
-    df = pd.DataFrame(dataset)
-
+    dfR = pd.DataFrame(datasetRifle)
     #import handgunCarts.csv
-    input_file_handgun = "C:\\DataAnalytics\\handgunCarts.csv"
+    input_file_handgun = "C:\\DataAnalytics\\handgunCartscsv.csv"
     datasetHandgun = pd.read_csv(input_file_handgun)
-    df = pd.DataFrame(dataset)
+    dfH = pd.DataFrame(datasetHandgun)
 
-    #remove unneeded cloumns from dataframe df - > dfc
-    cols = [2,3,4,5,6]
-    dfc = df[df.columns[cols]]
+
+    #remove unneeded cloumns from dataframes
+    cols = [0,1,2]
+    #dfcA = dfA[dfA.columns[cols]]
+    dfcR = dfR[dfR.columns[cols]]
+    dfcH = dfH[dfH.columns[cols]]
+
 
     #converts values of dfc dataframe to float (likely from string or int)
-    dfc.astype(float)
+    #dfcA.astype(float)
+    dfcR.astype(float)
+    dfcH.astype(float)
 
     #print the dataframe dfc
-    print(dfc.to_string())
+    #print(dfcA.to_string())
+    print(dfcR.to_string())
+    print(dfcH.to_string())
 
-    #Delimiter thingy
+    #Delimiter thingy that devides the nonsorted and sorted dataframes
     print("----------------------------------------\n")
     print("Above is unsorted list, below sorted by bullet weight")
     print("-----------------------------------------\n")  
+    
 
     #dfc is a dataframe that can contain mass in grains of projectiles
-    #1000 > n > 0, but range is practically speaking smaller
-    #cut off at/including row 75
-    dfg = dfc.sort_values("Weight")
-    print(dfg.to_string())
+    
+    dfcR.sort_values(dfcR.columns[1])
+    dfcH.sort_values(dfcH.columns[1])
+    
+    print(dfcR.to_string())
+    print(dfcH.to_string())
 
+    
     #send dataframe into a csv file
-    dfg.to_csv('CleanedBallisticsData.csv')
+    dfcR.to_csv('CleanedBallisticRifleData.csv')
+    dfcH.to_csv('CleanedBallisticHandgunData.csv')
 
     #waits for user input to hold open window
     pauseForever = input("Press any key to Continue")
 
-main()
+getData()
+
