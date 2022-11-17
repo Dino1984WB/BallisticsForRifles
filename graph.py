@@ -11,12 +11,23 @@ def graph():
 
     #new dataframe from getData() in rifleData.py
     dfMainR = rd.getData() #grab dataframe of ballistics data from rifleData.py
+    
+    #create datasets for x, y axis
+    x = dfMainR["Weight"]
+    y = dfMainR["V0"]
+    y2 = dfMainR["V100"]
+
+    dfFinal = dfMainR.reset_index(drop=True)
+    
     fig = mpl.figure() #figure..?
     ax = mpl.axes() #axis declaration
 
+    #graph declaration
+    ax.plot() #plot the np array against the dfMainR dataframe
 
-    x = np.array([0, 750])
-    ax.plot(x, dfMainR)
+    #test: determine contents of dfMainR
+    print(dfMainR.to_string())    
+
 
     mpl.show() #sets graph visible
 

@@ -4,10 +4,10 @@ import csv
 import pandas as pd
 
 def getData():
-
     #begin pandas stuff
     #grab files, produce a dataframe rom the csv files 
     
+
     #import rifleCarts.csv
     input_file_rifle = "C:\\DataAnalytics\\rifleCartscsv.csv"
     datasetRifle = pd.read_csv(input_file_rifle)
@@ -33,12 +33,14 @@ def getData():
     #print(dfcH.to_string())
 
     #dfc is a dataframe that can contain mass in grains of projectiles
-    printThisR = dfcR.sort_values(dfcR.columns[0]) #sorts the Rifle records numerically
-    printThisH = dfcH.sort_values(dfcH.columns[0]) #sorts the Handgun records numerically
+    R = dfcR.sort_values(dfcR.columns[0]) #sorts the Rifle records numerically
+    H = dfcH.sort_values(dfcH.columns[0]) #sorts the Handgun records numerically
     
+    #printThisR = 
+    #printThisH = 
     #prints the dataframes to the console
-    #print(printThisR.to_string())
-    #rint(" ")
+    print(R.to_string())
+    #print(" ")
     #print(printThisH.to_string())
 
     #send dataframe into a csv file
@@ -48,7 +50,7 @@ def getData():
     #waits for user input to hold open window
     #pauseForever = input("Press any key to Continue")
 
-    return printThisR # add printThisH via comma later on
+    return R # add printThisH via comma later on
 
 
 getData()
