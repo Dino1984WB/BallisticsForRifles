@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import csv
 import pandas as pd
 
@@ -28,6 +30,6 @@ def main():
 
     dfg.to_csv('CleanedBallisticsData.csv')
 
-
+    pauseForever = input("Press any key to Continue")
 
 main()
