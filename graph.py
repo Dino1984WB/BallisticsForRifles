@@ -12,13 +12,14 @@ def graph():
     #new dataframe from getData() in rifleData.py
     dfMainR = rd.getData() #grab dataframe of ballistics data from rifleData.py
     
+    print(dfMainR.toString())
     #create datasets for x, y axis
     x = dfMainR["Weight"]
     y = dfMainR["V0"]
     y2 = dfMainR["V100"]
 
-    dfFinal = dfMainR.reset_index(drop=True)
-    
+    pd.reset_index()
+
     fig = mpl.figure() #figure..?
     ax = mpl.axes() #axis declaration
 

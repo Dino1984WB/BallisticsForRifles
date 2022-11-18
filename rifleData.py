@@ -1,6 +1,6 @@
-#!/usr/bin/env python3
+#Author: William Bukowski
 
-import csv
+import csv as c
 import pandas as pd
 
 def getData():
@@ -50,6 +50,11 @@ def getData():
     #waits for user input to hold open window
     #pauseForever = input("Press any key to Continue")
 
+    R.to_csv('C:\DataAnalytics\initData.txt') #from a no index .csv
+    with open('C:\DataAnalytics\initData.txt') as infile, open('C:\DataAnalytics\FinalData.txt', 'w') as outfile:
+        for idx, line in enumerate(infile):
+            outfile.write(f'{idx},{line}')
+    
     return R # add printThisH via comma later on
 
 
