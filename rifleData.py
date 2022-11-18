@@ -39,7 +39,7 @@ def getData():
     #printThisR = 
     #printThisH = 
     #prints the dataframes to the console
-    print(R.to_string())
+    print(R.toString())
     #print(" ")
     #print(printThisH.to_string())
 
